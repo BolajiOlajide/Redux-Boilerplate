@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 import { loadRepos } from '../actions/repoActions';
 
+import RepoDetails from './RepoDetails';
+
 class App extends Component {
 	constructor(props) {
 		super(props)
@@ -20,6 +22,9 @@ class App extends Component {
 		return (
 			<div>
 				<h1> Repos is Live! </h1>
+				{repos.length > 0 ? repos.map((repo) => {
+					<RepoDetails user={repo} />
+				}) : <p>False</p>}
 			</div>
 		)
 	}

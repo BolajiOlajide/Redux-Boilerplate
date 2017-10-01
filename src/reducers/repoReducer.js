@@ -8,7 +8,7 @@ const repoReducer = (state = initialState.repos, action) => {
     case LOAD_REPOS_SUCCESS:
       return [
         ...state,
-        action.repos
+        ...action.repos
       ]
     
     default:
